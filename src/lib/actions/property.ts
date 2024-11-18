@@ -18,21 +18,21 @@ export async function saveProperty(
     typeId: propertyData.typeId,
     userId,
   };
-  const result = await prisma.property.create({
+  const result = await prisma.property.creaet({
     data: {
       ...basic,
-      location: {
+      location:{
         create: propertyData.location,
       },
       feature: {
-        create: propertyData.propertyFeature,
+        create:propertyData.propertyFeature,
       },
       contact: {
-        create: propertyData.contact,
+        create:propertyData.contact,
       },
       images: {
-        create: imagesUrls.map((img) => ({
-          url: img,
+        create: imagesUrls.map((img)=>{
+          url:img,
         })),
       },
     },
